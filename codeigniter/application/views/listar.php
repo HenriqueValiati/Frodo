@@ -1,10 +1,8 @@
+<?php
+$this->load->view('home');
+?>
 <title>Visualizar Pessoas</title>
- <?php
-        require 'menu.php';
-        ?>
-    </header>
     <body>
-
         <div class="col-sm-9 col-sm-offset-3 col-md-12 col-md-offset-2 main">
             <br>
             <table width="90%" class="table table-striped table-bordered table-hover">

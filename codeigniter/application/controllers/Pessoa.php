@@ -10,8 +10,6 @@ class Pessoa extends CI_Controller {
         //call CodeIgniter's default Constructor
         parent::__construct();
         $this->load->library('session');
-        //load database libray manually
-        $this->load->database();
         //load Model
         $this->load->model('pessoa_model');
     }
@@ -21,7 +19,7 @@ class Pessoa extends CI_Controller {
         $data['pagina'] = 'pessoa';
         $this->load->view('principal', $data);
     }
-
+    
     public function recebe_dados() {
 
         $nome = $this->input->post("nome");
