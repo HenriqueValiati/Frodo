@@ -46,7 +46,7 @@ class Pessoa extends CI_Controller {
 
         $conexao = mysqli_connect('localhost', 'root', '', 'aula') or die('Erro ao conectar ao banco de dados');
         $sql = "INSERT INTO cadastro VALUES ";
-        $sql .= "('', '$nome', '$documento', '$endereco', '$numero', '$cidade', '$uf', '$pais', '$fone', '$email', '$nascimento')";
+        $sql .= "('', '$nome', '$documento', '$endereco', '$numero', '$pais', '$uf', '$cidade', '$fone', '$email', '$dt_nasc')";
         mysqli_query($conexao, $sql) or die("Erro ao tentar cadastrar registro");
         mysqli_close($conexao);
         echo "Cadastrado com sucesso!";
