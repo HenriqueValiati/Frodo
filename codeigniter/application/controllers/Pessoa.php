@@ -12,6 +12,7 @@ class Pessoa extends CI_Controller {
         $this->load->library('session');
         //load Model
         $this->load->model('pessoa_model');
+        //this->pessoa_model->set_pessoa($dados);
     }
 
     public function index() {
@@ -19,7 +20,10 @@ class Pessoa extends CI_Controller {
         $data['pagina'] = 'pessoa';
         $this->load->view('principal', $data);
     }
-    
+    public function get_pessoa(){
+        $this->pessoa_model->get_pessoa();
+    }
+
     public function recebe_dados() {
 
         $nome = $this->input->post("nome");
@@ -33,25 +37,19 @@ class Pessoa extends CI_Controller {
         $uf = $this->input->post("uf");
         $pais = $this->input->post("pais");
 
-        echo "Nome: " . $nome . "<br>" .
-        "Documento: " . $documento . "<br>" .
-        "E-mail: " . $email . "<br>" .
-        "Fone: " . $fone . "<br>" .
-        "Data de Nascimento: " . $nascimento . "<br>" .
-        "Endereço: " . $endereco . "<br>" .
-        "Número: " . $numero . "<br>" .
-        "Cidade: " . $cidade . "<br>" .
-        "UF: " . $uf . "<br>" .
-        "País: " . $pais . "<br>";
+        $dados = array(
+            "nome" => $nome,
+            "nome" => $nome,
+            "nome" => $nome,
+            "nome" => $nome,
+            "nome" => $nome,
+            "nome" => $nome,
+            "nome" => $nome
+        );
 
-        $conexao = mysqli_connect('localhost', 'root', '', 'aula') or die('Erro ao conectar ao banco de dados');
-        $sql = "INSERT INTO cadastro VALUES ";
-        $sql .= "('', '$nome', '$documento', '$endereco', '$numero', '$pais', '$uf', '$cidade', '$fone', '$email', '$dt_nasc')";
-        mysqli_query($conexao, $sql) or die("Erro ao tentar cadastrar registro");
-        mysqli_close($conexao);
-        echo "Cadastrado com sucesso!";
-        echo $sql;
-        //header('Location: http://localhost/codeigniter/pessoa');
+        $resultado = $this->pessoa_model->set_pessoa($dados);
+        
+        
     }
 
 }
