@@ -3,62 +3,39 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="bootstrap-3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="bootstrap-4/css/formLogin.css" rel="stylesheet" type="text/css"/>
-        <link href="fontawesome-5/web-fonts-with-css/css/fontawesome.min.css" rel="stylesheet"/>
-        <script src="bootstrap-3/js/jquery.js"></script> 
-        <script src="bootstrap-3/js/bootstrap.min.js"></script>        
-        <script src="fontawesome-5/svg-with-js/js/fontawesome.min.js"/></script>
-</head>
-<body>
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<?php echo base_url() . 'home'; ?>">Home</a>
+        <!-- CSS -->
+        <link href="<?php echo base_url(); ?>bootstrap-3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>bootstrap-3/css/personalizados/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>bootstrap-3/css/personalizados/formLogin.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>fontawesome-5/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
+        <!-- JS -->
+        <script src="<?php echo base_url(); ?>bootstrap-3/js/jquery.js"></script>
+        <script src="<?php echo base_url(); ?>bootstrap-3/js/bootstrap.min.js"></script>        
+        <script src="<?php echo base_url(); ?>fontawesome-5/svg-with-js/js/fontawesome.min.js"></script>
+        <script src="<?php echo base_url(); ?>bootstrap-3/js/personalizados/pessoa.js"></script>
+        <script src="<?php echo base_url(); ?>bootstrap-3/js/personalizados/jquery.dataTables.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?php echo base_url(); ?>home"><span class="fa fa-home"></span> Home</a></li>
+                        <li><a href="<?php echo base_url(); ?>pessoa"><span class="fa fa-users"></span> Clientes</a></li>               
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <span style="font-size: 3rem;">
+                            <i class="fa fa-sign-out-alt"></i>
+                        </span>
+                    </ul>
+                </div>
             </div>
+        </nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <!--Menu Dropdown-->
-                    <li class="dropdown">
-                        <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pessoas <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a  href="<?php echo base_url() . 'pessoa'; ?>">Cadastrar Pessoa <span class="sr-only"></span></a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="<?php echo base_url() . 'listar'; ?>">Buscar Pessoas <span class="sr-only"></span></a></li>
-                        </ul>
-                    </li>                   
-                </ul>
-                <ul>
-                    <form class="navbar-form navbar-nav">
-                        <button type="submit" class="btn btn-default">Enviar</button>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Buscar">
-                        </div>
-                    </form>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <span style="font-size: 3rem;">
-                        <i class="fas fa-robot"></i>
-                    </span>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
-    <!--PAGINA MEIO-->
-    <div class="col-lg-12">
-        <?php $this->load->view($pagina); ?>
-    </div>
-    <!--FIM PAGINA MEIO-->
-</body>
+        <!--PAGINA MEIO-->
+        <div class="col-lg-12">
+            <?php $this->load->view($pagina); ?>
+        </div>
+        <!--FIM PAGINA MEIO-->
+    </body>
 </html>

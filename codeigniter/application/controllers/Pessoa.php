@@ -5,23 +5,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Pessoa extends CI_Controller {
 
     public function __construct() {
-        //parent::__construct( ); 
-        //$this->load->library('session');
-        //call CodeIgniter's default Constructor
         parent::__construct();
         $this->load->library('session');
         //load Model
-        $this->load->model('pessoa_model');
-        //this->pessoa_model->set_pessoa($dados);
+        $this->load->model('pessoa_model','pessoaModel');
     }
 
     public function index() {
-        $data['listaPessoa'] = $this->pessoa_model->get_pessoas();
+        $data['listaPessoa'] = $this->pessoaModel->get_pessoa();
         $data['pagina'] = 'pessoa';
         $this->load->view('principal', $data);
     }
-    public function get_pessoa(){
-        $this->pessoa_model->get_pessoa();
+
+    public function get_pessoa() {
+        $this->pessoaModel->get_pessoa();
     }
 
     public function recebe_dados() {
@@ -39,17 +36,18 @@ class Pessoa extends CI_Controller {
 
         $dados = array(
             "nome" => $nome,
-            "nome" => $nome,
-            "nome" => $nome,
-            "nome" => $nome,
-            "nome" => $nome,
-            "nome" => $nome,
-            "nome" => $nome
+            "documento" => $documento,
+            "email" => $email,
+            "fone" => $fone,
+            "nascimento" => $nascimento,
+            "endereco" => $endereco,
+            "$numero" => $numero,
+            "cidade" => $cidade,
+            "uf" => $uf,
+            "pais" => $pais
         );
 
         $resultado = $this->pessoa_model->set_pessoa($dados);
-        
-        
     }
 
 }

@@ -1,4 +1,3 @@
-<script src="bootstrap-3/js/personalizados/pessoa.js"></script>
 <title>Cadastro de Pessoas</title>
 
 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-2 main ">
@@ -6,7 +5,7 @@
 </div>
 
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalId"><span class="fa fa-plus"></span>NOVO</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalId"><span class="fa fa-plus"></span>  NOVO</button>
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" id="modalId" role="dialog" aria-labelledby="gridSystemModalLabel">
     <div class="modal-dialog modal-lg" role="document">
@@ -95,4 +94,16 @@
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
+<table class="table-bordered relative" id="tabelaClientes">
+    <thead>
+    <th>Nome</th>
+        
+    </thead>
+    <tbody>
+        <td>teste</td>
+    </tbody>
+    
+    
+</table>
 
