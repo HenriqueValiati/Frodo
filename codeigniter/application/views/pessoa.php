@@ -78,7 +78,7 @@
                                 <input class="form-control" type="text" placeholder="UF" name="uf" id="uf" required>
                             </div>
                         </div>
-                        
+
                 </div>
 
                 <div class="modal-footer"> <!-- não está enviando pois o body deve fechar antes-->
@@ -87,23 +87,35 @@
                 </div>
                 </form>
             </div>
-            
+
         </div>
     </div><!-- /.modal body -->
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
-<table class="table-bordered relative" id="tabelaClientes">
-    <thead>
-    <th>Nome</th>
-        
-    </thead>
-    <tbody>
-        <td>teste</td>
-    </tbody>
-    
-    
-</table>
-
+<div class="container">
+    <table id= "tabelaClientes" name= "tabelaClientes" class="table-bordered">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Documento</th>
+                <th>Fone</th>
+                <th>E-mail</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($listaPessoa as $row): ?>
+                <tr>
+                    <td><?php echo $row->nome; ?></td>
+                    <td><?php echo $row->documento; ?></td>
+                    <td><?php echo $row->fone; ?></td>
+                    <td><?php echo $row->email; ?></td>
+                    <td><button type="button" class="btn btn-warning btnEditar" data-toggle="modal" data-target="#modalId" value="<?php echo $row->id; ?>">Editar</button>
+                    <button type="button" class="btn btn-danger" value="<?php echo $row->id; ?>">Deletar</button></td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</div>

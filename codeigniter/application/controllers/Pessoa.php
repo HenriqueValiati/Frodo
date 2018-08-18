@@ -20,6 +20,9 @@ class Pessoa extends CI_Controller {
     public function get_pessoa() {
         $this->pessoaModel->get_pessoa();
     }
+    public function edita_pessoa ($id = 0){//$id = 0 se não tiver id pega 0 default
+        $this->pessoaModel->edita_pessoa($id);
+    }
 
     public function recebe_dados() {
 
