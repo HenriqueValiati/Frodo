@@ -14,7 +14,7 @@ class Login extends CI_Controller {
     }
 
     public function efetua_login() {
-        echo 'teste';
+        //$this->load->view('pessoa');
     }
 }
 //http://blog.thiagobelem.net/criando-um-sistema-de-login-com-php-e-mysql
